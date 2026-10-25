@@ -1,0 +1,203 @@
+---
+// src/components/HardwareMatrix.astro
+---
+
+<section class="hardware-matrix-section" id="hardware-matrix">
+  <div class="matrix-heading">
+    <span class="section-micro-tag font-mono" data-i18n="tag_matrix">// MATRIZ DE ASIGNACIÓN INTELIGENTE</span>
+    <h2 class="matrix-title" data-i18n="matrix_title">Hardware Detectado vs. Modelo Recomendado</h2>
+    <p class="matrix-subtitle" data-i18n="matrix_desc">
+      Nacel audita los recursos disponibles y vincula el modelo que ofrece el equilibrio perfecto entre exactitud técnica y consumo mínimo de memoria.
+    </p>
+  </div>
+
+  <div class="matrix-table-wrapper">
+    <table class="architectural-table">
+      <thead>
+        <tr class="font-mono">
+          <th scope="col" data-i18n="th_hardware">Hardware Detectado</th>
+          <th scope="col" data-i18n="th_model">Modelo Asignado</th>
+          <th scope="col" data-i18n="th_performance">Rendimiento</th>
+          <th scope="col" data-i18n="th_usecase">Caso de Uso</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="hardware-spec">
+            <div class="spec-name">Apple Silicon (M1-M4) / 16GB+ RAM</div>
+            <div class="spec-sub font-mono">GPUs con soporte Metal / VRAM Unificada</div>
+          </td>
+          <td class="model-spec font-mono">
+            <span class="model-pill cyan">qwen2.5-coder:7b</span>
+          </td>
+          <td class="perf-spec font-mono">
+            <span class="perf-tag">⚡ Rápido • Precisión quirúrgica</span>
+            <span class="tokens-sec">~65-80 tok/s</span>
+          </td>
+          <td class="usecase-spec" data-i18n="uc_1">
+            Copiloto principal para desarrollo intensivo, arquitectura de software y scripts complejos.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="hardware-spec">
+            <div class="spec-name">8GB - 12GB RAM / GPUs Medias</div>
+            <div class="spec-sub font-mono">NVIDIA RTX 2060+, Radeon RX o Intel Arc</div>
+          </td>
+          <td class="model-spec font-mono">
+            <span class="model-pill">qwen2.5-coder:3b</span>
+          </td>
+          <td class="perf-spec font-mono">
+            <span class="perf-tag highlight">⚡⚡ Ultra Rápido • Excelente sintaxis</span>
+            <span class="tokens-sec">~95-120 tok/s</span>
+          </td>
+          <td class="usecase-spec" data-i18n="uc_2">
+            Comandos diarios de Git, Docker, Kubernetes y corrección precisa de errores de consola.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="hardware-spec">
+            <div class="spec-name">Equipos ligeros / 4GB - 6GB RAM</div>
+            <div class="spec-sub font-mono">Laptops estándar con CPU multi-core</div>
+          </td>
+          <td class="model-spec font-mono">
+            <span class="model-pill">qwen2.5-coder:1.5b</span>
+          </td>
+          <td class="perf-spec font-mono">
+            <span class="perf-tag">🚀 Instantáneo • Bajo consumo</span>
+            <span class="tokens-sec">~140+ tok/s</span>
+          </td>
+          <td class="usecase-spec" data-i18n="uc_3">
+            Respuestas inmediatas de sintaxis sin saturar la memoria RAM del sistema operativo.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="hardware-spec">
+            <div class="spec-name">Ultra Ligeros / Netbooks</div>
+            <div class="spec-sub font-mono">Entornos Raspberry Pi 5 o terminales mínimos</div>
+          </td>
+          <td class="model-spec font-mono">
+            <span class="model-pill">llama3.2:1b</span>
+          </td>
+          <td class="perf-spec font-mono">
+            <span class="perf-tag">🚀 Instantáneo • Mínimo peso</span>
+            <span class="tokens-sec">~150+ tok/s</span>
+          </td>
+          <td class="usecase-spec" data-i18n="uc_4">
+            Sugerencias rápidas y correcciones en máquinas con recursos de hardware limitados.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<style>
+  .hardware-matrix-section {
+    padding: 5rem 0;
+  }
+
+  .matrix-heading {
+    max-width: 760px;
+    margin-bottom: 3rem;
+  }
+
+  .section-micro-tag {
+    font-size: 0.75rem;
+    color: var(--accent-cyan);
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .matrix-title {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    margin: 0.5rem 0 0.75rem;
+  }
+
+  .matrix-subtitle {
+    color: var(--text-steel);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .matrix-table-wrapper {
+    overflow-x: auto;
+  }
+
+  .architectural-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+
+  .architectural-table th {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    letter-spacing: 0.05em;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--hairline-bright);
+    text-transform: uppercase;
+  }
+
+  .architectural-table td {
+    padding: 1.5rem 1.25rem;
+    border-bottom: 1px solid var(--hairline);
+    vertical-align: top;
+  }
+
+  .spec-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-pure);
+  }
+
+  .spec-sub {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    margin-top: 0.2rem;
+  }
+
+  .model-pill {
+    display: inline-block;
+    padding: 0.25rem 0.65rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--hairline);
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: var(--text-platinum);
+  }
+
+  .model-pill.cyan {
+    border-color: rgba(0, 242, 254, 0.4);
+    background: rgba(0, 242, 254, 0.05);
+    color: var(--accent-cyan);
+  }
+
+  .perf-spec {
+    font-size: 0.8rem;
+  }
+
+  .perf-tag {
+    display: block;
+    color: var(--text-platinum);
+  }
+
+  .perf-tag.highlight {
+    color: var(--accent-cyan);
+  }
+
+  .tokens-sec {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+  }
+
+  .usecase-spec {
+    font-size: 0.85rem;
+    color: var(--text-steel);
+    line-height: 1.5;
+    max-width: 320px;
+  }
+</style>

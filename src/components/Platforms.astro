@@ -1,0 +1,150 @@
+---
+// src/components/Platforms.astro
+---
+
+<section class="platforms-section border-t-hairline border-b-hairline" id="platforms">
+  <div class="platforms-header">
+    <span class="section-micro-tag font-mono" data-i18n="tag_platforms">// COMPATIBILIDAD NATIVA TOTAL</span>
+    <h2 class="platforms-title" data-i18n="platforms_title">Soporte Nativo en Cada Entorno de Desarrollo</h2>
+  </div>
+
+  <div class="platforms-laser-grid">
+    <!-- OS Platforms -->
+    <div class="platform-row">
+      <span class="row-category font-mono" data-i18n="cat_systems">SISTEMAS OPERATIVOS</span>
+      <div class="platform-badges font-mono">
+        <div class="laser-badge">
+          <span class="badge-icon">🍎</span>
+          <span class="badge-label">macOS</span>
+          <span class="badge-spec">Apple Silicon M1-M4 &amp; Intel • Homebrew</span>
+        </div>
+        <div class="laser-badge">
+          <span class="badge-icon">🐧</span>
+          <span class="badge-label">CachyOS &amp; Arch</span>
+          <span class="badge-spec">Pacman • Paru • Yay</span>
+        </div>
+        <div class="laser-badge">
+          <span class="badge-icon">🐧</span>
+          <span class="badge-label">Ubuntu &amp; Debian</span>
+          <span class="badge-spec">APT • PPAs Oficiales</span>
+        </div>
+        <div class="laser-badge">
+          <span class="badge-icon">🪟</span>
+          <span class="badge-label">WSL2</span>
+          <span class="badge-spec">Windows Subsystem for Linux</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Shells -->
+    <div class="platform-row">
+      <span class="row-category font-mono" data-i18n="cat_shells">SHELLS NATIVAS</span>
+      <div class="platform-badges font-mono">
+        <div class="laser-badge">
+          <span class="badge-icon">🐚</span>
+          <span class="badge-label">Zsh &amp; Oh My Zsh</span>
+          <span class="badge-spec">Plugins nativos • Zinit • Antigen</span>
+        </div>
+        <div class="laser-badge">
+          <span class="badge-icon">🐟</span>
+          <span class="badge-label">Fish Shell</span>
+          <span class="badge-spec">Integración Fisher &amp; conf.d</span>
+        </div>
+        <div class="laser-badge">
+          <span class="badge-icon">🐧</span>
+          <span class="badge-label">GNU Bash</span>
+          <span class="badge-spec">Hooks en PROMPT_COMMAND</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .platforms-section {
+    padding: 4rem 0;
+    margin: 3rem 0;
+  }
+
+  .platforms-header {
+    margin-bottom: 2.5rem;
+    text-align: left;
+  }
+
+  .section-micro-tag {
+    font-size: 0.75rem;
+    color: var(--accent-cyan);
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .platforms-title {
+    font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  }
+
+  .platforms-laser-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .platform-row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .platform-row {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+  }
+
+  .row-category {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    letter-spacing: 0.05em;
+  }
+
+  .platform-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .laser-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.85rem;
+    background: rgba(255, 255, 255, 0.015);
+    border: 1px solid var(--hairline);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    transition: all 0.2s ease;
+  }
+
+  .laser-badge:hover {
+    border-color: var(--hairline-bright);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .badge-icon {
+    font-size: 0.95rem;
+  }
+
+  .badge-label {
+    color: var(--text-pure);
+    font-weight: 600;
+  }
+
+  .badge-spec {
+    color: var(--text-dim);
+    font-size: 0.7rem;
+    border-left: 1px solid var(--hairline);
+    padding-left: 0.5rem;
+  }
+</style>

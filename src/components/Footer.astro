@@ -1,0 +1,107 @@
+---
+// src/components/Footer.astro
+---
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-col-left">
+      <div class="footer-brand font-mono">
+        <span class="brand-spark">✨</span> Nacel.AI
+      </div>
+      <p class="footer-license" data-i18n="footer_rights">
+        Creado por <strong>Danniel Navas</strong>. Código liberado bajo Licencia MIT Open Source.
+      </p>
+    </div>
+
+    <div class="footer-telemetry font-mono">
+      <div class="tel-row">
+        <span class="tel-label">SYSTEM STATUS:</span>
+        <span class="tel-value ok">OPERATIONAL (OFFLINE CAPABLE)</span>
+      </div>
+      <div class="tel-row">
+        <span class="tel-label">CORE REPOSITORY:</span>
+        <a href="https://github.com/dannielnavas/nacel" target="_blank" rel="noopener noreferrer" class="tel-link">
+          github.com/dannielnavas/nacel
+        </a>
+      </div>
+      <div class="tel-row">
+        <span class="tel-label">LLM CONTEXT:</span>
+        <a href="/nacel/llms.txt" target="_blank" class="tel-link">/llms.txt</a>
+        <span class="tel-sep">•</span>
+        <a href="/nacel/llms-full.txt" target="_blank" class="tel-link">/llms-full.txt</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--hairline);
+    padding: 3rem 0;
+    margin-top: 3rem;
+    background: #050507;
+  }
+
+  .footer-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .footer-inner {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+  }
+
+  .footer-brand {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-pure);
+    margin-bottom: 0.4rem;
+  }
+
+  .footer-license {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+  }
+
+  .footer-telemetry {
+    font-size: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .tel-row {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .tel-label {
+    color: var(--text-dim);
+  }
+
+  .tel-value.ok {
+    color: var(--accent-emerald);
+  }
+
+  .tel-link {
+    color: var(--accent-cyan);
+  }
+
+  .tel-link:hover {
+    text-decoration: underline;
+  }
+
+  .tel-sep {
+    color: var(--text-dim);
+  }
+</style>

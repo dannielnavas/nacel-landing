@@ -1,0 +1,32 @@
+# robots.txt for Nacel.AI (https://dannielnavas.github.io/nacel)
+User-agent: *
+Allow: /
+
+# Standard Sitemaps
+Sitemap: https://dannielnavas.github.io/nacel/sitemap-index.xml
+Sitemap: https://dannielnavas.github.io/nacel/sitemap-0.xml
+
+# LLM & AI Crawlers explicit discovery
+User-agent: GPTBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+User-agent: PerplexityBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /

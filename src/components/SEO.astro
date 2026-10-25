@@ -1,0 +1,130 @@
+---
+// src/components/SEO.astro
+export interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+}
+
+const {
+  title = "Nacel.AI — El Copiloto Inteligente y Privado para tu Terminal",
+  description = "Copiloto local para terminal potenciado por Ollama. Diagnostica comandos con Ctrl+G, traduce lenguaje natural a sintaxis precisa de shell, auditoría inteligente de hardware y cero telemetría.",
+  canonical = "https://dannielnavas.github.io/nacel/",
+} = Astro.props;
+
+const siteUrl = "https://dannielnavas.github.io/nacel/";
+const author = "Danniel Navas";
+
+// Schema.org SoftwareApplication
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Nacel.AI",
+  "operatingSystem": "macOS, Linux (Arch, Ubuntu, Debian), WSL2",
+  "applicationCategory": "DeveloperApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": description,
+  "author": {
+    "@type": "Person",
+    "name": author,
+    "url": "https://github.com/dannielnavas"
+  },
+  "license": "https://opensource.org/licenses/MIT",
+  "softwareVersion": "1.2.0",
+  "url": siteUrl
+};
+
+// Schema.org FAQPage for Google Rich Snippets
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Necesito internet para usar Nacel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Solo necesitas conexión a internet durante la instalación inicial para descargar el script y obtener el modelo de Ollama en tu equipo. Una vez completado, Nacel funciona de manera 100% offline."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué shells están soportadas oficialmente?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Zsh (incluyendo Oh My Zsh, Zinit y Antigen), Fish Shell (con soporte Fisher y conf.d), GNU Bash (mediante hooks en PROMPT_COMMAND) y entornos compatibles POSIX en macOS, distribuciones Linux y WSL2."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo se actualiza Nacel a la última versión?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Basta con volver a ejecutar el comando de instalación de una sola línea curl -fsSL https://raw.githubusercontent.com/dannielnavas/nacel/main/install.sh | bash o bien hacer git pull dentro de tu repositorio local clonado."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo cambiar de modelo de IA en cualquier momento?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Puedes cambiar de modelo manualmente con nacel model set <nombre> o ejecutar interactivamente nacel model recommend para que el sistema re-evalúe la carga actual de tu hardware."
+      }
+    }
+  ]
+};
+
+// Schema.org WebSite
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Nacel.AI",
+  "url": siteUrl,
+  "description": description,
+  "inLanguage": ["es", "en"]
+};
+---
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+<meta name="keywords" content="nacel, nacel ai, terminal copilot, ollama terminal, local ai terminal, zsh ai copilot, bash ai copilot, fish shell ai, private developer tools, local llm cli, qwen2.5-coder terminal, danniel navas" />
+<meta name="author" content={author} />
+<meta name="creator" content={author} />
+<meta name="publisher" content={author} />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href={canonical} />
+
+<!-- Multilingual SEO Alternates -->
+<link rel="alternate" hreflang="es" href={siteUrl} />
+<link rel="alternate" hreflang="en" href={siteUrl} />
+<link rel="alternate" hreflang="x-default" href={siteUrl} />
+
+<!-- Open Graph / Facebook / LinkedIn -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={siteUrl} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:site_name" content="Nacel.AI" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:locale:alternate" content="en_US" />
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={siteUrl} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+
+<!-- LLM Discovery Links -->
+<link rel="help" type="text/plain" href={`${siteUrl}llms.txt`} title="LLM context and API summary" />
+<link rel="describedby" type="text/plain" href={`${siteUrl}llms-full.txt`} title="LLM extended technical documentation" />
+
+<!-- Schema.org JSON-LD Structured Data -->
+<script type="application/ld+json" set:html={JSON.stringify(softwareSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />

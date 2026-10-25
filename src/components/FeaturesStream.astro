@@ -1,0 +1,302 @@
+---
+// src/components/FeaturesStream.astro
+---
+
+<section class="features-stream-section" id="features">
+  <div class="section-heading-stream">
+    <span class="section-micro-tag font-mono" data-i18n="tag_architecture">// INGENIERÍA Y CAPACIDADES</span>
+    <h2 class="section-monumental-title" data-i18n="features_monumental_title">
+      Potencia Cruda en tu Shell.<br />
+      <span class="text-steel">Sin Clics. Sin Nube. Sin Esperas.</span>
+    </h2>
+    <p class="section-subtitle" data-i18n="features_subtitle">
+      Flujo de trabajo optimizado para desarrolladores que viven en la consola. Diseñado con latencia cero como prioridad absoluta.
+    </p>
+  </div>
+
+  <!-- The Kinetic Stream: Asymmetric typographic moments separated by laser hairlines -->
+  <div class="kinetic-stream">
+    
+    <!-- Feature 01 -->
+    <article class="stream-item border-t-hairline">
+      <div class="stream-index font-mono">01</div>
+      <div class="stream-content">
+        <div class="stream-header-group">
+          <span class="stream-badge font-mono">KEYBINDING NATIVO</span>
+          <h3 class="stream-title" data-i18n="f1_title">Reparación Inmediata con Ctrl+G / fix</h3>
+        </div>
+        <p class="stream-desc" data-i18n="f1_desc">
+          Captura la traza exacta del último comando fallido en tu shell. En milisegundos, deduce la causa raíz en una frase quirúrgica y coloca el comando corregido listo para ser ejecutado con un simple <kbd class="kbd font-mono">Enter</kbd>.
+        </p>
+      </div>
+      <div class="stream-visual font-mono">
+        <div class="visual-pill">
+          <span class="v-signal ok"></span>
+          <span>HOOK ACTIVO: PROMPT_COMMAND</span>
+        </div>
+        <div class="visual-cmd">
+          <span class="v-dim">$</span> ctrl+g <span class="v-arrow">→</span> <span class="v-action">auto-deduce &amp; autofill</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Feature 02 -->
+    <article class="stream-item border-t-hairline">
+      <div class="stream-index font-mono">02</div>
+      <div class="stream-content">
+        <div class="stream-header-group">
+          <span class="stream-badge font-mono">TRADUCTOR NEURONAL</span>
+          <h3 class="stream-title" data-i18n="f2_title">Lenguaje Natural a Comando (ask)</h3>
+        </div>
+        <p class="stream-desc" data-i18n="f2_desc">
+          Olvida memorizar flags oscuras de <code class="code-inline font-mono">awk</code>, <code class="code-inline font-mono">find</code>, <code class="code-inline font-mono">tar</code> o <code class="code-inline font-mono">iptables</code>. Expresa lo que necesitas en español o inglés y Nacel generará sintaxis validada para tu sistema operativo específico.
+        </p>
+      </div>
+      <div class="stream-visual font-mono">
+        <div class="visual-pill">
+          <span class="v-signal cyan"></span>
+          <span>PARSER: ZERO-HALLUCINATION</span>
+        </div>
+        <div class="visual-cmd">
+          <span class="v-dim">nacel ask</span> "extraer audio mp3 de video.mkv"
+        </div>
+      </div>
+    </article>
+
+    <!-- Feature 03 -->
+    <article class="stream-item border-t-hairline">
+      <div class="stream-index font-mono">03</div>
+      <div class="stream-content">
+        <div class="stream-header-group">
+          <span class="stream-badge font-mono">AUTO-BENCHMARK</span>
+          <h3 class="stream-title" data-i18n="f3_title">Diagnóstico Inteligente de Hardware</h3>
+        </div>
+        <p class="stream-desc" data-i18n="f3_desc">
+          Auditoría automática de núcleos CPU, memoria RAM unificada y aceleradores gráficos (Metal, CUDA o Vulkan). Nacel selecciona y auto-configura el modelo de parámetros ideal para garantizar fluidez sin asfixiar la memoria de tu máquina.
+        </p>
+      </div>
+      <div class="stream-visual font-mono">
+        <div class="visual-pill">
+          <span class="v-signal ok"></span>
+          <span>DETECTOR: METAL / CUDA / VULKAN</span>
+        </div>
+        <div class="visual-cmd">
+          <span class="v-dim">auto-select</span> [qwen2.5-coder:7b | 3b | 1.5b]
+        </div>
+      </div>
+    </article>
+
+    <!-- Feature 04 -->
+    <article class="stream-item border-t-hairline">
+      <div class="stream-index font-mono">04</div>
+      <div class="stream-content">
+        <div class="stream-header-group">
+          <span class="stream-badge font-mono">SOBERANÍA ABSOLUTA</span>
+          <h3 class="stream-title" data-i18n="f4_title">Cero Telemetría y 100% Privado</h3>
+        </div>
+        <p class="stream-desc" data-i18n="f4_desc">
+          Tus tokens, variables de entorno, rutas sensibles de carpetas y código fuente jamás abandonan tu equipo. No hay servidores intermedios, cuentas obligatorias, ni recopilación de analíticas: todo se procesa mediante tu instancia local de Ollama.
+        </p>
+      </div>
+      <div class="stream-visual font-mono">
+        <div class="visual-pill">
+          <span class="v-signal magenta"></span>
+          <span>FIREWALL STATUS: AIR-GAPPED READY</span>
+        </div>
+        <div class="visual-cmd">
+          <span class="v-dim">outbound traffic:</span> <span class="v-zero">0.00 KB</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Feature 05 -->
+    <article class="stream-item border-t-hairline">
+      <div class="stream-index font-mono">05</div>
+      <div class="stream-content">
+        <div class="stream-header-group">
+          <span class="stream-badge font-mono">UNIX PIPES PIPELINE</span>
+          <h3 class="stream-title" data-i18n="f5_title">Explicación y Debugging de Código</h3>
+        </div>
+        <p class="stream-desc" data-i18n="f5_desc">
+          Diseñado para integrarse con la filosofía Unix de composición. Pasa logs caóticos o scripts sospechosos directamente a través de pipes estándar: <code class="code-inline font-mono">cat error.log | nacel debug</code> para obtener un análisis inmediato del problema.
+        </p>
+      </div>
+      <div class="stream-visual font-mono">
+        <div class="visual-pill">
+          <span class="v-signal cyan"></span>
+          <span>POSIX STDIN / STDOUT READY</span>
+        </div>
+        <div class="visual-cmd">
+          cat trace.log | <span class="v-action">nacel debug</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Feature 06 -->
+    <article class="stream-item border-t-hairline border-b-hairline">
+      <div class="stream-index font-mono">06</div>
+      <div class="stream-content">
+        <div class="stream-header-group">
+          <span class="stream-badge font-mono">GLOBAL NATIVE</span>
+          <h3 class="stream-title" data-i18n="f6_title">Bilingüe Nativo (ES / EN)</h3>
+        </div>
+        <p class="stream-desc" data-i18n="f6_desc">
+          Tanto la interfaz en consola como el razonamiento y las explicaciones de la IA se adaptan con fidelidad nativa al idioma que elijas. Conmuta instantáneamente la experiencia con el comando <code class="code-inline font-mono">nacel lang es</code> o <code class="code-inline font-mono">nacel lang en</code>.
+        </p>
+      </div>
+      <div class="stream-visual font-mono">
+        <div class="visual-pill">
+          <span class="v-signal ok"></span>
+          <span>DUAL LOCALE: LATAM / EN_US</span>
+        </div>
+        <div class="visual-cmd">
+          nacel lang <span class="v-dim">[es|en]</span>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<style>
+  .features-stream-section {
+    padding: 5rem 0 3rem;
+  }
+
+  .section-heading-stream {
+    max-width: 820px;
+    margin-bottom: 4rem;
+  }
+
+  .section-micro-tag {
+    font-size: 0.75rem;
+    color: var(--accent-cyan);
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-monumental-title {
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    line-height: 1.1;
+    margin: 0.5rem 0 1rem;
+  }
+
+  .text-steel {
+    color: var(--text-steel);
+  }
+
+  .section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-steel);
+    line-height: 1.6;
+  }
+
+  .kinetic-stream {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stream-item {
+    display: grid;
+    grid-template-columns: 80px 1.4fr 1fr;
+    gap: 2.5rem;
+    padding: 3rem 0;
+    align-items: baseline;
+    transition: background 0.2s ease;
+  }
+
+  @media (max-width: 900px) {
+    .stream-item {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+  }
+
+  .stream-index {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dim);
+    line-height: 1;
+  }
+
+  .stream-header-group {
+    margin-bottom: 0.75rem;
+  }
+
+  .stream-badge {
+    font-size: 0.65rem;
+    color: var(--accent-cyan);
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .stream-title {
+    font-size: 1.35rem;
+    letter-spacing: -0.02em;
+  }
+
+  .stream-desc {
+    font-size: 0.95rem;
+    color: var(--text-steel);
+    line-height: 1.65;
+  }
+
+  .kbd {
+    display: inline-block;
+    padding: 0.15rem 0.4rem;
+    font-size: 0.75rem;
+    background: #15161f;
+    border: 1px solid var(--hairline-bright);
+    border-radius: 3px;
+    color: var(--text-pure);
+  }
+
+  .code-inline {
+    padding: 0.15rem 0.35rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--hairline);
+    border-radius: 3px;
+    color: var(--accent-cyan);
+    font-size: 0.85em;
+  }
+
+  .stream-visual {
+    background: #08090d;
+    border: 1px solid var(--hairline);
+    padding: 1.25rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+  }
+
+  .visual-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-dim);
+    margin-bottom: 0.65rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.05em;
+  }
+
+  .v-signal {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+
+  .v-signal.ok { background: var(--accent-emerald); }
+  .v-signal.cyan { background: var(--accent-cyan); }
+  .v-signal.magenta { background: var(--accent-magenta); }
+
+  .visual-cmd {
+    color: var(--text-platinum);
+    line-height: 1.4;
+  }
+
+  .v-dim { color: var(--text-dim); }
+  .v-arrow { color: var(--accent-cyan); margin: 0 0.3rem; }
+  .v-action { color: var(--accent-cyan); font-weight: 600; }
+  .v-zero { color: var(--accent-emerald); font-weight: 700; }
+</style>

@@ -1,0 +1,18 @@
+---
+// src/pages/500.astro
+import '../styles/global.css';
+import ErrorScreen from '../components/ErrorScreen.astro';
+---
+
+<ErrorScreen
+  code="500"
+  category="5XX // SERVER_HOST_FAULT"
+  titleEs="Fallo Interno en la Conexión del Host"
+  titleEn="Internal Host Connection Fault"
+  descEs="El servidor o servicio local encontró una condición inesperada que le impidió procesar la petición."
+  descEn="The server or local daemon encountered an unexpected condition that prevented it from fulfilling the request."
+  diagEs="Error 500 (Internal Server Error): La solicitud al daemon local falló o la conexión con el motor de inferencia expiró por timeout en el socket."
+  diagEn="Error 500 (Internal Server Error): The local daemon request failed or the inference engine socket timed out."
+  suggestedCmd="nacel restart && systemctl status ollama"
+  httpStatus="HTTP/2 500 Internal Server Error"
+/>

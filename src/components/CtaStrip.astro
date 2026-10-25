@@ -1,0 +1,103 @@
+---
+// src/components/CtaStrip.astro
+---
+
+<section class="cta-strip border-t-hairline border-b-hairline">
+  <div class="cta-inner">
+    <div class="cta-text-group">
+      <h2 class="cta-title" data-i18n="cta_title">Toma el control de tu terminal hoy mismo.</h2>
+      <p class="cta-desc" data-i18n="cta_desc">Instalación no intrusiva. Sin cuentas de usuario. Desinstalación limpia en un solo comando.</p>
+    </div>
+    <div class="cta-actions">
+      <button type="button" class="cta-copy-action font-mono" id="btn-cta-copy" aria-label="Copiar comando de instalación">
+        <span class="cta-prompt">$</span> curl -fsSL ... | bash
+        <span class="cta-copy-badge" id="cta-copy-badge" data-i18n="cta_badge">Copiar</span>
+      </button>
+      <a href="https://github.com/dannielnavas/nacel" target="_blank" rel="noopener noreferrer" class="cta-gh-link font-mono">
+        GitHub Repo →
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-strip {
+    padding: 5rem 0;
+    margin: 4rem 0 2rem;
+  }
+
+  .cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+
+  @media (max-width: 850px) {
+    .cta-inner {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2rem;
+    }
+  }
+
+  .cta-title {
+    font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .cta-desc {
+    color: var(--text-steel);
+    font-size: 0.95rem;
+  }
+
+  .cta-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .cta-copy-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    background: #0f1017;
+    border: 1px solid var(--hairline-bright);
+    border-radius: 4px;
+    color: var(--text-platinum);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+  }
+
+  .cta-copy-action:hover {
+    border-color: var(--accent-cyan);
+  }
+
+  .cta-prompt {
+    color: var(--accent-cyan);
+  }
+
+  .cta-copy-badge {
+    font-size: 0.65rem;
+    padding: 0.15rem 0.4rem;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 3px;
+    color: var(--text-pure);
+  }
+
+  .cta-gh-link {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--hairline);
+    border-radius: 4px;
+    transition: all 0.2s ease;
+  }
+
+  .cta-gh-link:hover {
+    color: var(--text-pure);
+    border-color: var(--hairline-bright);
+  }
+</style>

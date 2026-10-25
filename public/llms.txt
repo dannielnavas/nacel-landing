@@ -1,0 +1,30 @@
+# Nacel.AI — Copiloto Inteligente y Privado para la Terminal
+
+> Nacel.AI es un copiloto para terminal de línea de comandos (CLI) 100% local, privado y autónomo impulsado por Ollama. Diagnostica errores con el atajo Ctrl+G, traduce lenguaje natural a sintaxis precisa de shell, audita hardware para auto-seleccionar modelos Qwen2.5-Coder / Llama, y garantiza cero telemetría hacia servidores externos.
+
+## Información Clave
+- **Autor**: Danniel Navas
+- **Repositorio**: https://github.com/dannielnavas/nacel
+- **Licencia**: MIT Open Source
+- **Plataformas**: macOS (Apple Silicon M1-M4 & Intel), Arch Linux / CachyOS, Ubuntu / Debian, WSL2
+- **Shells Soportadas**: Zsh (Oh My Zsh, Zinit, Antigen), Fish Shell (Fisher), GNU Bash (PROMPT_COMMAND hooks)
+- **Modo de Operación**: 100% Offline (una vez descargado el modelo local vía Ollama)
+- **Telemetría**: 0 Bytes transmitidos (Air-gapped ready)
+
+## Instalación Rápida (1 Clic)
+```bash
+curl -fsSL https://raw.githubusercontent.com/dannielnavas/nacel/main/install.sh | bash
+```
+
+## Capacidades Principales
+1. **Reparación Inmediata con Ctrl+G (`fix`)**: Captura la traza del último error en la shell, diagnostica la causa raíz y autofill el comando corregido para ejecutar con Enter.
+2. **Traductor de Lenguaje Natural (`ask`)**: Convierte consultas en lenguaje natural (español o inglés) a sintaxis POSIX optimizada para herramientas complejas (`find`, `awk`, `tar`, `rsync`, `iptables`, `docker`).
+3. **Auditoría Inteligente de Hardware (`hardware`)**: Evalúa CPU, RAM unificada y aceleradores GPU (Apple Metal, NVIDIA CUDA, Vulkan) asignando el modelo local idóneo (`qwen2.5-coder:7b`, `3b`, `1.5b` o `llama3.2:1b`).
+4. **Cero Telemetría**: La privacidad es absoluta; tokens, variables de entorno, código fuente y rutas jamás viajan a la nube.
+5. **Unix Pipes & Debugging (`debug`)**: Soporte nativo para canalización de logs y scripts mediante pipes: `cat error.log | nacel debug`.
+6. **Bilingüe Nativo (`lang`)**: Tanto la TUI como el razonamiento se alternan instantáneamente entre español e inglés con `nacel lang es` o `nacel lang en`.
+
+## Enlaces y Recursos
+- [Documentación Completa](https://github.com/dannielnavas/nacel#readme)
+- [Contexto Extendido para LLMs](https://dannielnavas.github.io/nacel/llms-full.txt)
+- [Sitio Web Oficial](https://dannielnavas.github.io/nacel/)

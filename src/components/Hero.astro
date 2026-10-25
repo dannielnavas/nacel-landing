@@ -1,0 +1,188 @@
+---
+// src/components/Hero.astro
+---
+
+<section class="hero-section">
+  <div class="hero-meta-row">
+    <div class="meta-pill font-mono">
+      <span class="pill-dot"></span>
+      <span data-i18n="hero_badge">⚡ 100% Local • Privado • Potenciado por Ollama</span>
+    </div>
+    <div class="meta-status font-mono">
+      <span class="status-key">TELEMETRY:</span> <span class="status-val">0 BYTES</span>
+    </div>
+  </div>
+
+  <h1 class="hero-title" data-i18n="hero_title">
+    El Copiloto Inteligente<br />
+    <span class="hero-title-highlight">para tu Terminal.</span>
+  </h1>
+
+  <p class="hero-description" data-i18n="hero_desc">
+    Diagnostica comandos fallidos al instante, traduce lenguaje natural a sintaxis precisa de terminal, explica código y chatea con IA local sin enviar un solo byte a la nube.
+  </p>
+
+  <!-- Laser Precision Install Bar -->
+  <div class="install-bar-container">
+    <div class="install-bar">
+      <span class="terminal-prefix font-mono">$</span>
+      <code class="install-command font-mono" id="install-cmd">curl -fsSL https://raw.githubusercontent.com/dannielnavas/nacel/main/install.sh | bash</code>
+      <button type="button" class="copy-install-btn font-mono" id="copy-btn" aria-label="Copiar comando de instalación">
+        <span class="copy-icon">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+        </span>
+        <span class="copy-label" id="copy-label" data-i18n="copy_btn">Copiar</span>
+      </button>
+    </div>
+    <div class="install-subtext font-mono">
+      <span data-i18n="install_note">⚡ Instalación en 1 clic • Compatible con macOS, Linux y WSL2</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    padding: 6rem 0 3.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .meta-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.85rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--hairline);
+    border-radius: 999px;
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
+    color: var(--text-platinum);
+  }
+
+  .pill-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--accent-emerald);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--accent-emerald);
+  }
+
+  .meta-status {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+  }
+
+  .status-key {
+    color: var(--text-dim);
+  }
+
+  .status-val {
+    color: var(--accent-cyan);
+    font-weight: 600;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 5.5vw, 4.75rem);
+    line-height: 1.05;
+    margin-bottom: 1.5rem;
+    max-width: 950px;
+  }
+
+  .hero-title-highlight {
+    background: linear-gradient(135deg, #ffffff 40%, var(--accent-cyan) 85%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-description {
+    font-size: clamp(1rem, 1.35vw, 1.25rem);
+    color: var(--text-steel);
+    max-width: 760px;
+    margin-bottom: 3rem;
+    font-weight: 400;
+    line-height: 1.65;
+  }
+
+  .install-bar-container {
+    width: 100%;
+    max-width: 720px;
+    margin-bottom: 2rem;
+  }
+
+  .install-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: #09090e;
+    border: 1px solid var(--hairline-bright);
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .install-bar:hover {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 12px 36px rgba(0, 242, 254, 0.1);
+  }
+
+  .terminal-prefix {
+    color: var(--accent-cyan);
+    font-weight: 700;
+    user-select: none;
+  }
+
+  .install-command {
+    flex: 1;
+    text-align: left;
+    font-size: 0.85rem;
+    color: var(--text-platinum);
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .copy-install-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.85rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--hairline);
+    border-radius: 4px;
+    color: var(--text-platinum);
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .copy-install-btn:hover {
+    background: var(--text-pure);
+    color: #000000;
+  }
+
+  :global(.copy-install-btn.copied) {
+    background: var(--accent-emerald) !important;
+    color: #000000 !important;
+    border-color: var(--accent-emerald) !important;
+  }
+
+  .install-subtext {
+    margin-top: 0.75rem;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+  }
+</style>

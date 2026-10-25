@@ -1,0 +1,150 @@
+---
+// src/components/Faq.astro
+---
+
+<section class="faq-section" id="faq">
+  <div class="faq-header">
+    <span class="section-micro-tag font-mono" data-i18n="tag_faq">// RESOLUCIÓN DE DUDAS FRECUENTES</span>
+    <h2 class="faq-title" data-i18n="faq_title">Preguntas Frecuentes</h2>
+  </div>
+
+  <div class="faq-accordion-list">
+    
+    <div class="faq-item border-t-hairline">
+      <button class="faq-trigger" aria-expanded="false">
+        <span class="faq-question" data-i18n="faq_q1">¿Necesito internet para usar Nacel?</span>
+        <span class="faq-indicator font-mono">+</span>
+      </button>
+      <div class="faq-answer">
+        <p data-i18n="faq_a1">
+          Solo necesitas conexión a internet durante la instalación inicial para descargar el script y obtener el modelo de Ollama en tu equipo. Una vez completado, Nacel funciona de manera <strong>100% offline</strong> en aviones, trenes o centros de datos aislados sin conexión externa.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item border-t-hairline">
+      <button class="faq-trigger" aria-expanded="false">
+        <span class="faq-question" data-i18n="faq_q2">¿Qué shells están soportadas oficialmente?</span>
+        <span class="faq-indicator font-mono">+</span>
+      </button>
+      <div class="faq-answer">
+        <p data-i18n="faq_a2">
+          Zsh (incluyendo Oh My Zsh, Zinit y Antigen), Fish Shell (con soporte Fisher y conf.d), GNU Bash (mediante hooks en PROMPT_COMMAND) y entornos compatibles POSIX en macOS, distribuciones Linux (Arch, Ubuntu, Fedora, Debian) y WSL2.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item border-t-hairline">
+      <button class="faq-trigger" aria-expanded="false">
+        <span class="faq-question" data-i18n="faq_q3">¿Cómo se actualiza Nacel a la última versión?</span>
+        <span class="faq-indicator font-mono">+</span>
+      </button>
+      <div class="faq-answer">
+        <p data-i18n="faq_a3">
+          Basta con volver a ejecutar el comando de instalación de una sola línea <code class="code-inline font-mono">curl -fsSL https://raw.githubusercontent.com/dannielnavas/nacel/main/install.sh | bash</code> o bien hacer <code class="code-inline font-mono">git pull</code> dentro de tu repositorio local clonado.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item border-t-hairline border-b-hairline">
+      <button class="faq-trigger" aria-expanded="false">
+        <span class="faq-question" data-i18n="faq_q4">¿Puedo cambiar de modelo de IA en cualquier momento?</span>
+        <span class="faq-indicator font-mono">+</span>
+      </button>
+      <div class="faq-answer">
+        <p data-i18n="faq_a4">
+          Sí. Puedes cambiar de modelo manualmente con <code class="code-inline font-mono">nacel model set &lt;nombre&gt;</code> (por ejemplo <code class="code-inline font-mono">nacel model set codellama:7b</code>) o ejecutar interactivamente <code class="code-inline font-mono">nacel model recommend</code> para que el sistema re-evalúe la carga actual de tu hardware.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .faq-section {
+    padding: 5rem 0;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .faq-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .section-micro-tag {
+    font-size: 0.75rem;
+    color: var(--accent-cyan);
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .faq-title {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    margin-top: 0.5rem;
+  }
+
+  .faq-accordion-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .faq-item {
+    transition: background 0.2s ease;
+  }
+
+  .faq-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+    text-align: left;
+    color: var(--text-pure);
+  }
+
+  .faq-question {
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+  }
+
+  .faq-indicator {
+    font-size: 1.25rem;
+    color: var(--text-dim);
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+
+  :global(.faq-item.active) .faq-indicator {
+    color: var(--accent-cyan);
+  }
+
+  .faq-answer {
+    display: none;
+    padding-bottom: 1.5rem;
+    font-size: 0.95rem;
+    color: var(--text-steel);
+    line-height: 1.65;
+  }
+
+  :global(.faq-item.active) .faq-answer {
+    display: block;
+    animation: fadeIn 0.2s ease forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(3px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .code-inline {
+    padding: 0.15rem 0.35rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--hairline);
+    border-radius: 3px;
+    color: var(--accent-cyan);
+    font-size: 0.85em;
+  }
+</style>

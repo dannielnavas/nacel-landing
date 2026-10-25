@@ -1,0 +1,18 @@
+---
+// src/pages/404.astro
+import '../styles/global.css';
+import ErrorScreen from '../components/ErrorScreen.astro';
+---
+
+<ErrorScreen
+  code="404"
+  category="4XX // CLIENT_ROUTING_ERROR"
+  titleEs="Ruta de Terminal No Encontrada"
+  titleEn="Terminal Route Not Found"
+  descEs="La dirección o subdirectorio solicitado no existe en el sistema de archivos estáticos de Nacel."
+  descEn="The requested endpoint or path does not exist within Nacel's static router filesystem."
+  diagEs="Error 404 (Not Found): La URI no coincide con ningún endpoint o ruta estática registrada en el router de Nacel. Es posible que el recurso haya sido movido o renombrado."
+  diagEn="Error 404 (Not Found): The target URI matches no registered static route or endpoint in Nacel's router. The resource may have been relocated or removed."
+  suggestedCmd="cd /nacel && nacel status"
+  httpStatus="HTTP/2 404 Not Found"
+/>

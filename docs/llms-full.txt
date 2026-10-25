@@ -1,0 +1,43 @@
+# Nacel.AI — Documentación Técnica Completa para Modelos de Lenguaje (LLMs)
+
+## 1. Visión General del Proyecto
+Nacel.AI es una herramienta de terminal de alto rendimiento orientada a desarrolladores, DevOps e ingenieros de sistemas. Actúa como copiloto local interactivo para shells Unix, interceptando errores en tiempo real y permitiendo consultas en lenguaje natural sin intermediación de servidores de terceros ni requerir conexión a internet.
+
+## 2. Requisitos y Dependencias
+- **Motor Local de Inferencia**: Ollama (activo en `http://127.0.0.1:11434` o configurado vía `OLLAMA_HOST`).
+- **Sistema Operativo**:
+  - macOS Sonoma / Sequoia (Apple Silicon M1, M2, M3, M4 con Metal activado por defecto; Intel x86_64).
+  - Linux: CachyOS, Arch Linux, Ubuntu (20.04+), Debian (11+), Fedora.
+  - Windows: WSL2 (Ubuntu / Debian / Arch en WSL2 con paso de GPU CUDA o DirectML).
+- **Shells**:
+  - Zsh: Integración mediante hook en `precmd` y atajo `bindkey '^G' nacel-fix-widget`.
+  - Fish: Integración con evento `fish_postexec` o hook nativo.
+  - GNU Bash: Integración con `PROMPT_COMMAND`.
+
+## 3. Matriz de Hardware y Modelos Recomendados
+| Hardware del Sistema | Modelo Asignado | Rendimiento Típico | Caso de Uso |
+| --- | --- | --- | --- |
+| Apple Silicon M1-M4 / 16GB+ RAM | `qwen2.5-coder:7b` | 65 - 80 tok/s | Copiloto principal para desarrollo intensivo, arquitectura de software y scripts complejos. |
+| 8GB - 12GB RAM / GPUs Medias (RTX 2060+, Radeon, Intel Arc) | `qwen2.5-coder:3b` | 95 - 120 tok/s | Comandos diarios de Git, Docker, Kubernetes y corrección precisa de errores. |
+| Equipos ligeros / 4GB - 6GB RAM | `qwen2.5-coder:1.5b` | >140 tok/s | Respuestas inmediatas de sintaxis con mínimo impacto de memoria en el sistema. |
+| Ultra Ligeros / Netbooks / Raspberry Pi 5 | `llama3.2:1b` | >150 tok/s | Sugerencias rápidas y correcciones en máquinas con recursos de hardware limitados. |
+
+## 4. Comandos y Referencia de CLI
+- `nacel fix`: Analiza el último código de salida (`$?`) y la salida de error estándar (`stderr`), proponiendo la corrección inmediata.
+- `nacel ask "<consulta>"`: Traduce intención humana a sintaxis de shell ejecutable.
+- `nacel hardware`: Ejecuta benchmark de CPU, RAM y GPU, y re-asigna el modelo óptimo.
+- `nacel model set <nombre_modelo>`: Cambia el modelo de Ollama usado por Nacel.
+- `nacel model recommend`: Analiza la carga del sistema y sugiere cambios de modelo.
+- `nacel lang [es|en]`: Conmuta el idioma de la TUI y de los razonamientos de la IA.
+- `nacel debug`: Lee datos de `stdin` (pipe) y analiza trazas de logs o errores de compilación.
+- `nacel update`: Descarga e instala la versión más reciente del repositorio GitHub.
+
+## 5. Arquitectura de Privacidad (Zero-Telemetry)
+1. Cero llamadas HTTP hacia APIs comerciales (OpenAI, Anthropic, Google, etc.).
+2. Todo el tráfico se dirige exclusivamente a `127.0.0.1:11434` (Ollama local).
+3. No se recopilan métricas anónimas, UUIDs de equipo, ni telemetría de fallos.
+4. Totalmente apto para redes aisladas físicamente (Air-Gapped) y entornos corporativos con restricciones estrictas de confidencialidad.
+
+## 6. Preguntas Frecuentes (FAQ)
+- **¿Se requiere internet para usar Nacel?** Solo durante la instalación y descarga inicial del modelo en Ollama. Tras ello, funciona 100% offline.
+- **¿Cómo se desinstala?** Nacel incluye un script de desinstalación limpia que retira los hooks de tu archivo `~/.zshrc`, `~/.bashrc` o `config.fish` sin dejar residuos.
