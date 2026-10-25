@@ -4,8 +4,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://dannielnavas.github.io',
-  base: '/nacel',
+  site: 'https://nacel.danniel.dev',
   outDir: './docs',
   integrations: [sitemap()],
 });

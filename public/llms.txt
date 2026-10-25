@@ -26,5 +26,5 @@ curl -fsSL https://raw.githubusercontent.com/dannielnavas/nacel/main/install.sh 
 
 ## Enlaces y Recursos
 - [Documentación Completa](https://github.com/dannielnavas/nacel#readme)
-- [Contexto Extendido para LLMs](https://dannielnavas.github.io/nacel/llms-full.txt)
-- [Sitio Web Oficial](https://dannielnavas.github.io/nacel/)
+- [Contexto Extendido para LLMs](https://nacel.danniel.dev/llms-full.txt)
+- [Sitio Web Oficial](https://nacel.danniel.dev/)

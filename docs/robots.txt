@@ -1,10 +1,10 @@
-# robots.txt for Nacel.AI (https://dannielnavas.github.io/nacel)
+# robots.txt for Nacel.AI (https://nacel.danniel.dev)
 User-agent: *
 Allow: /
 
 # Standard Sitemaps
-Sitemap: https://dannielnavas.github.io/nacel/sitemap-index.xml
-Sitemap: https://dannielnavas.github.io/nacel/sitemap-0.xml
+Sitemap: https://nacel.danniel.dev/sitemap-index.xml
+Sitemap: https://nacel.danniel.dev/sitemap-0.xml
 
 # LLM & AI Crawlers explicit discovery
 User-agent: GPTBot

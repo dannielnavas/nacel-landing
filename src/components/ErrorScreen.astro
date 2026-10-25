@@ -26,11 +26,11 @@ const {
   descEn,
   diagEs,
   diagEn,
-  suggestedCmd = 'cd /nacel && nacel status',
+  suggestedCmd = 'cd ~ && nacel status',
   httpStatus,
 } = Astro.props;
 
-const baseUrl = import.meta.env.BASE_URL || '/nacel';
+const baseUrl = (import.meta.env.BASE_URL && import.meta.env.BASE_URL !== '/') ? import.meta.env.BASE_URL : '';
 const pageTitle = `${code} ${titleEs} — Nacel.AI`;
 ---
 
@@ -116,7 +116,7 @@ const pageTitle = `${code} ${titleEs} — Nacel.AI`;
 
         <!-- Navigation Actions -->
         <div class="error-actions">
-          <a href={`${baseUrl}/`} class="action-btn primary font-mono">
+          <a href={`${baseUrl || '/'}`} class="action-btn primary font-mono">
             <span class="btn-icon">↵</span>
             <span id="btn-home-text">cd ~ / Volver al Inicio</span>
           </a>
